@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <header>
+      <% include ../partials/_header %>
+  </header>
+
+</head>
+<body>
+
+<ul>
+  <% for (links in urls){ %>
+    <li><%= urls[links] %> - <%= links %></li>
+  <% }%>
+</ul>
+
+
+<p> link for this thing </p>
+
+
+</body>
+</html>
