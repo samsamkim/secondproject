@@ -56,13 +56,25 @@ app.get("/urls/:id", (req, res) => {
   res.render("urls_show", templateVars);
 });
 
+
+app.post("/urls/:id/delete", (req, res) => {
+  delete urlDatabase[req.params.id]
+  res.redirect("/urls");
+});
+
+
+app.post("/urls/:id", (req, res) => {
+  urlDatabase[req.params.id] = req.body['fname'];
+  res.redirect("/urls");
+});
+
+
 app.post("/urls", (req, res) => {
   let tiny = generateRandomString()
 
   while(urlDatabase.hasOwnProperty(req.params.shortURL) === true){
     let tiny = generateRandomString();
   }
-
 
   if(req.body.longURL.slice(0, 3) === "www"){
     let fixedURL = `https://${req.body.longURL}`;
@@ -77,7 +89,13 @@ app.post("/urls", (req, res) => {
     res.send(`${tiny} - ${req.body.longURL}`);
 }});
 
+
+
 app.get("/u/:shortURL", (req, res) => {
   let longURL = urlDatabase[req.params.shortURL];
   res.redirect(longURL);
 });
+
+
+
+

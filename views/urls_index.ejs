@@ -7,15 +7,21 @@
 
 </head>
 <body>
-
-<ul>
   <% for (links in urls){ %>
-    <li><%= urls[links] %> - <%= links %></li>
+    <form method="POST" action= "urls/<%= links %>/delete" >
+    <ul>
+        <li><%= urls[links] %> - <%= links %>
+          <a href="/urls/<%= links %>"> edit </a>
+
+          <button>delete</button></li>
+    </ul>
+    </form>
   <% }%>
-</ul>
 
 
-<p> link for this thing </p>
+
+
+
 
 
 </body>

@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <header>
     <% include ./partials/_header %>
   </header>
-
-
 </head>
+
 <body>
 
 
-  <p> <%= longURL %> - <%= shortURL %></p>
+  <p> shortURL: <%= shortURL %>
+    <br>
+
+     <form method="POST" action= "/urls/<%= shortURL %>" >
+      <input id="css" type="text" name="fname" value="<%= longURL %>">
+      <input type="submit" value="update">
+     </form>
+    </br>
+  </p>
+
+
+
 
 </body>
+
 </html>
