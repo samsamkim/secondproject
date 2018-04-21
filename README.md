@@ -1,6 +1,6 @@
 ## TinyApp Project
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["Screenshot of URLs page"](https://github.com/samsamkim/secondproject/blob/master/docs/urls-page.png?raw=true)
+!["Screenshot of register page"](https://github.com/samsamkim/secondproject/blob/master/docs/register.png?raw=true)
 
 ## Dependencies
 
