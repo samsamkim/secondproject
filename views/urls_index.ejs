@@ -7,20 +7,19 @@
 
 </head>
 <body>
-  <% for (links in urls){ %>
+  <% for (links in urls){%>
     <form method="POST" action= "urls/<%= links %>/delete" >
     <ul>
-        <li><%= urls[links] %> - <%= links %>
-          <a href="/urls/<%= links %>"> edit </a>
+        <% if (urls[links].userID === cookieid){%>
+        <li><%= urls[links].link %> - <%= links %>
+           <a href="/urls/<%= links %>"> edit </a>
 
           <button>delete</button></li>
+          <%}%>
     </ul>
     </form>
   <% }%>
-
-
-
-
+  <a href="/urls/new">new url</a>
 
 
 
